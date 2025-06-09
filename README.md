@@ -21,7 +21,7 @@ To run this example, you will need to do the following:
 *   You will see the message sent and message count increase (if you click the send link more than once)
 *   Expect a short delay in processing the messages.
 
-## Why Use Asynchronous Messaging (JMS) Here?
+## Why Use Asynchronous Messaging (JMS)?
 
 This project demonstrates asynchronous processing using a message queue (ActiveMQ with JMS). In real life, this pattern solves several problems:
 
@@ -30,7 +30,7 @@ This project demonstrates asynchronous processing using a message queue (ActiveM
 3.  **Improving Responsiveness and User Experience:** The browser redirects immediately after the message is sent to the queue, not after the message is fully processed. This makes the application feel faster.
 4.  **Ensuring Reliability for Certain Operations:** If the message processing fails, the message can remain in the queue and be retried, or moved to a dead-letter queue for investigation. This is more robust than a direct synchronous call that might fail and lose the intended operation.
 
-### Why is JMS involved to update the product after it's stored in the DB?
+### JMS got involved to update the product after it's stored in the DB
 
 In this specific example, JMS isn't strictly *updating* the core product data that was initially saved. Instead, it's used to trigger a *secondary, asynchronous action* related to that product:
 
